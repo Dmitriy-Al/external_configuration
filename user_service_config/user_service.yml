@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/aston_study_db
-    driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,8 +15,7 @@ spring:
 
   cors:
     allowed-origins: "*"
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+    eureka:
+      client:
+        service-url:
+          defaultZone: http://localhost:8761/eureka/
