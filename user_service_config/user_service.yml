@@ -1,8 +1,6 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/aston_study_db
-    username: ${DB_USERNAME:dmitriy}
-    password: ${DB_PASSWORD:121219841212}
     driver-class-name: org.postgresql.Driver
 
   jpa:
