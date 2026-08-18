@@ -1,16 +1,14 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/aston_study_db
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME:dmitriy}
+    password: ${DB_PASSWORD:121219841212}
     driver-class-name: org.postgresql.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-
   kafka:
     bootstrap-servers: localhost:9092
     producer:
@@ -18,11 +16,9 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.add.type.headers: false
-
   cors:
-    allowed-origins: http://localhost:3000,http://127.0.0.1:3000
-
+    allowed-origins: "*"
 eureka:
   client:
     service-url:
-      defaultZone: ${SERVICE_URL}
+      defaultZone: http://localhost:8761/eureka/
