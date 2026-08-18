@@ -20,9 +20,9 @@ spring:
         spring.json.add.type.headers: false
 
   cors:
-    allowed-origins: http://localhost:3000,http://127.0.0.1:3000
+    allowed-origins: ${ORIGINS}
 
 eureka:
   client:
     service-url:
-      defaultZone: ${SERVICE_URL}
+      defaultZone: http://localhost:8761/eureka/
