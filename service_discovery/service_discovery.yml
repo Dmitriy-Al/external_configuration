@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: service_discovery
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false # чтобы сам себя не регистрировал
+    fetch-registry: false # чтобы сам себя не регистрировал

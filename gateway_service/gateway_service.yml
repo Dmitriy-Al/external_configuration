@@ -1,0 +1,26 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: gateway_service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: userServiceCB
+                fallbackUri: forward:/fallback/users
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
