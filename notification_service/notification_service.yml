@@ -29,6 +29,15 @@ spring:
   authorization:
     auth-username: ${AUTH_USERNAME}
     auth-password: ${AUTH_PASSWORD}
+    
+  management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always  
 
 server:
   port: 8082
